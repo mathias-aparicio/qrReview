@@ -2,28 +2,28 @@ import { h } from "preact";
 
 export default function ReviewButton({ company = "google" }) {
 	const selectedConfig = configs[company.toLowerCase()] || configs.google;
-
 	return (
-		<a
-			href="#"
-			className="inline-flex items-center px-4 py-2 bg-white rounded-md shadow-md hover:shadow-lg transition-shadow duration-200 border border-gray-200"
-		>
-			<div className="flex items-center space-x-2">
-				{/* Company Logo */}
-				<div className="w-6 h-6 relative">{selectedConfig.logo}</div>
-
-				{/* Text Content */}
-				<div className="text-left">
-					<div className="text-sm text-gray-600">Click here to leave us</div>
-					<div className="text-sm font-medium flex items-center">
-						a review on
-						<span className={`ml-1 ${selectedConfig.textColor}`}>
-							{selectedConfig.text}
-						</span>
+		<div className="max-w-60">
+			<a
+				href="#"
+				className="inline-flex items-center px-6 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 border border-gray-200 w-full sm:w-64"
+			>
+				<div className="flex items-center space-x-3">
+					{/* Company Logo */}
+					<div className="w-6 h-6 relative">{selectedConfig.logo}</div>
+					{/* Text Content */}
+					<div>
+						<div className="text-sm text-gray-600">Click here to leave us</div>
+						<div className="text-sm font-medium whitespace-nowrap">
+							a review on{" "}
+							<span className={selectedConfig.textColor}>
+								{selectedConfig.text}
+							</span>
+						</div>
 					</div>
 				</div>
-			</div>
-		</a>
+			</a>
+		</div>
 	);
 }
 const configs = {
