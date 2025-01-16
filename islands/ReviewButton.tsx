@@ -1,26 +1,34 @@
-import { h } from "preact";
+import CheckBox from "./CheckBox.tsx";
+import { signal } from "@preact/signals";
+export const reviewSubmitted = signal(false);
 
 export default function ReviewButton({ company = "google" }) {
 	const selectedConfig = configs[company.toLowerCase()] || configs.google;
 	return (
-		<div className="max-w-60">
+		<div className="max-w-md">
 			<a
 				href="#"
 				className="inline-flex items-center px-6 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 border border-gray-200 w-full sm:w-64"
 			>
-				<div className="flex items-center space-x-3">
-					{/* Company Logo */}
-					<div className="w-6 h-6 relative">{selectedConfig.logo}</div>
-					{/* Text Content */}
-					<div>
-						<div className="text-sm text-gray-600">Click here to leave us</div>
-						<div className="text-sm font-medium whitespace-nowrap">
-							a review on{" "}
-							<span className={selectedConfig.textColor}>
-								{selectedConfig.text}
-							</span>
+				<div className="flex items-center justify-between w-full gap-4">
+					<div className="flex items-center space-x-3">
+						{/* Company Logo */}
+						<div className="w-6 h-6 relative">{selectedConfig.logo}</div>
+						{/* Text Content */}
+						<div>
+							<div className="text-sm text-gray-600">
+								Cliquer-ici pour donner
+							</div>
+							<div className="text-sm font-medium whitespace-nowrap">
+								votre avis sur{" "}
+								<span className={selectedConfig.textColor}>
+									{selectedConfig.text}
+								</span>
+							</div>
 						</div>
 					</div>
+					{/* Checkbox */}
+					<CheckBox />
 				</div>
 			</a>
 		</div>
@@ -32,6 +40,7 @@ const configs = {
 		textColor: "text-blue-500",
 		logo: (
 			<svg
+				alt="Google Logo"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 326667 333333"
 				shape-rendering="geometricPrecision"

@@ -6,6 +6,7 @@ import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $fortunewheel from "./routes/fortunewheel.tsx";
 import * as $index from "./routes/index.tsx";
+import * as $CheckBox from "./islands/CheckBox.tsx";
 import * as $FortuneWheel from "./islands/FortuneWheel.tsx";
 import * as $GoToFortuneWheelButton from "./islands/GoToFortuneWheelButton.tsx";
 import * as $ReviewButton from "./islands/ReviewButton.tsx";
@@ -19,6 +20,7 @@ const manifest = {
     "./routes/index.tsx": $index,
   },
   islands: {
+    "./islands/CheckBox.tsx": $CheckBox,
     "./islands/FortuneWheel.tsx": $FortuneWheel,
     "./islands/GoToFortuneWheelButton.tsx": $GoToFortuneWheelButton,
     "./islands/ReviewButton.tsx": $ReviewButton,

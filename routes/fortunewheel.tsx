@@ -1,6 +1,4 @@
-import { h } from "preact";
 import WheelComponent from "../islands/FortuneWheel.tsx";
-
 export default function FortuneWheelPage() {
 	return (
 		<div class="relative min-h-screen bg-gradient-to-b from-purple-50 to-gray-100 p-4 overflow-hidden">
